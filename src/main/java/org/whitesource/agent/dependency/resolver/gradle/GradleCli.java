@@ -36,7 +36,7 @@ public class GradleCli extends Cli {
             List<String> lines = commandLineProcess.executeProcess();
             if (commandLineProcess.isErrorInProcess()) {
                 // in case gradle is not installed on the local machine, using 'gradlew' command, which uses local gradle wrapper
-                this.preferredEnvironment = this.preferredEnvironment.equals(Constants.GRADLE_WRAPPER) ? Constants.GRADLE : Constants.GRADLE_WRAPPER;
+                this.preferredEnvironment = this.preferredEnvironment.equals(Constants.GRADLE) ? Constants.GRADLE : Constants.GRADLE_WRAPPER;
                 params = getGradleCommandParams(GradleMvnCommand.DEPENDENCIES);
                 commandLineProcess = new CommandLineProcess(rootDirectory, params);
                 lines = commandLineProcess.executeProcess();
